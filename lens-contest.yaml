@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lens-contest
+spec:
+  selector:
+    matchLabels:
+      app: lens-contest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: lens-contest
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: beta.kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+      containers:
+        - name: lens-contest
+          image: docker.io/mirantis/lens-contest:latest
+          ports:
+            - containerPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: lens-contest
+spec:
+  selector:
+    app: lens-contest
+  ports:
+    - port: 80
