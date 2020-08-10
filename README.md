@@ -21,3 +21,5 @@ The Simple NGINX application for the Lens Contest is a fairly simple, static web
    ![Service View](./images/service.png)
 
 1. Check out the application and click on the button to enter the contest!
+
+   ![Browse](./images/browse.png)
