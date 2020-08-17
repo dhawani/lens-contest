@@ -23,3 +23,9 @@ The Simple NGINX application for the Lens Contest is a fairly simple, static web
 1. Check out the application and click on the button to enter the contest!
 
    ![Browse](./images/browse.png)
+   
+## Clean up
+
+1. In Lens, navigate to `Workloads` > `Deployments` and find the `lens-contest` deployment object. Click on `lens-contest` and Click on `-` in bottom right of your window.
+
+1. Navigate to `Network` > `Services` and find the `lens-contest` service object. Click on `lens-contest` and click on `-` in bottom right of your window.
